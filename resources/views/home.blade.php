@@ -1,27 +1,37 @@
 <x-layout>
-    <section class="site-wrap grid items-center gap-12 pt-14 pb-12 md:grid-cols-12 md:pt-20 md:pb-16">
+    <section class="site-wrap grid items-center gap-10 pt-10 pb-10 md:grid-cols-12 md:pt-14 md:pb-12">
         <div class="md:col-span-6" data-reveal>
-            <p class="status-pill"><i></i> Disponible · Lomé</p>
-            <p class="hero-kicker mt-5">{{ config('portfolio.role') }}</p>
-            <h1 class="hero-title mt-5 font-display text-[3rem] font-extrabold leading-[0.9] tracking-tight sm:text-6xl lg:text-7xl">
-                <span>{{ config('portfolio.first_name') }}</span>
-                <span class="text-copper">{{ config('portfolio.last_name') }}</span>
+            <div class="hero-identity">
+                <img
+                    class="hero-photo"
+                    src="{{ config('portfolio.photo') }}"
+                    alt="Portrait de {{ config('portfolio.name') }}"
+                    width="88"
+                    height="88"
+                >
+                <p class="status-pill"><i></i> Disponible · Lomé</p>
+            </div>
+            <h1 class="hero-title mt-5">
+                <span class="hero-family">{{ config('portfolio.last_name') }}</span>
+                <span class="hero-given">{{ config('portfolio.given_names') }}</span>
             </h1>
-            <div class="mt-7 flex flex-wrap gap-3">
-                <a href="{{ route('work.index') }}" class="btn-primary" data-magnetic>Voir le travail</a>
+            <p class="hero-lead">{{ config('portfolio.tagline') }}</p>
+            <p class="hero-meta">{{ config('portfolio.role') }} · {{ config('portfolio.location') }}</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+                <a href="{{ route('work.index') }}" class="btn-primary" data-magnetic>Voir les projets</a>
                 <a href="{{ route('contact') }}" class="btn-ghost" data-magnetic>Me écrire</a>
             </div>
-            <p class="mt-6 max-w-md text-lg leading-relaxed text-mute">{{ config('portfolio.intro') }}</p>
         </div>
 
         <div class="md:col-span-6" data-reveal>
             <div class="hero-stack">
                 @foreach ($featured as $card)
                     <a href="{{ route('work.show', $card['slug']) }}" class="hero-stack-card">
-                        <x-cover :kind="$card['cover']" :slug="$card['slug']" :title="$card['title']" :image="$card['image'] ?? null" />
+                        <x-cover :kind="$card['cover']" :slug="$card['slug']" :title="$card['title']" :kicker="$card['kicker']" :image="$card['image'] ?? null" />
                     </a>
                 @endforeach
             </div>
+            <p class="hero-stack-caption">Sélection — {{ $featured->pluck('title')->implode(' · ') }}</p>
         </div>
     </section>
 
@@ -49,6 +59,7 @@
             <div>
                 <p class="eyebrow">Sélection</p>
                 <h2 class="mt-3 font-display text-4xl font-bold tracking-tight md:text-5xl">Projets récents</h2>
+                <p class="mt-3 max-w-md text-mute">Trois pièces pour comprendre le terrain : urgence urbaine, outil métier, analytics.</p>
             </div>
             <a href="{{ route('work.index') }}" class="nav-link hidden sm:inline">Tout voir</a>
         </div>
@@ -57,12 +68,13 @@
             <article class="feature-row {{ $index % 2 === 1 ? 'is-flip' : '' }}" data-reveal>
                 <a href="{{ route('work.show', $project['slug']) }}" class="feature-visual">
                     <span class="feature-index">{{ str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT) }}</span>
-                    <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :image="$project['image'] ?? null" />
+                    <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" />
                 </a>
                 <div>
                     <p class="eyebrow">{{ $project['kicker'] }} · {{ $project['year'] }}</p>
                     <h3 class="mt-4 font-display text-4xl font-bold tracking-tight">{{ $project['title'] }}</h3>
                     <p class="mt-4 max-w-md leading-relaxed text-mute">{{ $project['summary'] }}</p>
+                    <p class="feature-role">Rôle — {{ $project['role'] }}</p>
                     <div class="mt-5 flex flex-wrap gap-2">
                         @foreach ($project['stack'] as $item)
                             <span class="chip">{{ $item }}</span>
@@ -77,7 +89,7 @@
 
         @if ($rest->isNotEmpty())
             <div class="also-list" data-reveal>
-                <p class="eyebrow mb-4">Aussi</p>
+                <p class="eyebrow mb-4">Autres projets</p>
                 @foreach ($rest as $project)
                     <a href="{{ route('work.show', $project['slug']) }}" class="also-row">
                         <span>{{ $project['title'] }}</span>
@@ -94,7 +106,8 @@
         <div class="grid gap-12 md:grid-cols-12" data-reveal>
             <div class="md:col-span-5">
                 <p class="eyebrow">Méthode</p>
-                <h2 class="mt-3 font-display text-4xl font-bold tracking-tight">Trois gestes, un produit.</h2>
+                <h2 class="mt-3 font-display text-4xl font-bold tracking-tight">Du besoin au produit qui tourne.</h2>
+                <p class="mt-4 max-w-sm text-mute">Trois gestes que je répète, que ce soit un outil interne ou un hackathon de 48 heures.</p>
             </div>
             <div class="md:col-span-7">
                 <div class="timeline">
@@ -130,7 +143,7 @@
             <h2 class="relative mx-auto mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight md:text-5xl">
                 Un projet. Un stage.<br>Une conversation sérieuse.
             </h2>
-            <p class="relative mx-auto mt-4 max-w-md text-mute">Agoè-Zossimé, Lomé — ouvert aux collabs et aux opportunités.</p>
+            <p class="relative mx-auto mt-4 max-w-md text-mute">Agoè-Zossimé, Lomé — ouvert aux collabs et aux opportunités. Réponse sous 48h en général.</p>
             <div class="relative mt-8 flex flex-wrap justify-center gap-3">
                 <a href="{{ route('contact') }}" class="btn-primary" data-magnetic>Écrire un message</a>
                 <a href="mailto:{{ config('portfolio.email') }}" class="btn-ghost" data-magnetic>{{ config('portfolio.email') }}</a>

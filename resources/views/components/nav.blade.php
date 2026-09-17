@@ -1,6 +1,6 @@
 @php
     $links = [
-        ['label' => 'Travail', 'route' => 'work.index', 'match' => 'work.*'],
+        ['label' => 'Projets', 'route' => 'work.index', 'match' => 'work.*'],
         ['label' => 'À propos', 'route' => 'about', 'match' => 'about'],
         ['label' => 'Contact', 'route' => 'contact', 'match' => 'contact'],
     ];

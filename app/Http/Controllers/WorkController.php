@@ -20,14 +20,17 @@ class WorkController extends Controller
 
         abort_if(! $project, 404);
 
-        $others = Portfolio::projects()
-            ->where('slug', '!=', $slug)
-            ->take(3)
-            ->values();
+        $projects = Portfolio::projects()->values();
+        $index = $projects->search(fn (array $item) => $item['slug'] === $slug);
 
         return view('work.show', [
             'project' => $project,
-            'others' => $others,
+            'previous' => $index > 0 ? $projects[$index - 1] : null,
+            'next' => $index !== false && $index < $projects->count() - 1 ? $projects[$index + 1] : null,
+            'others' => $projects
+                ->where('slug', '!=', $slug)
+                ->values()
+                ->take(3),
         ]);
     }
 }

@@ -18,7 +18,8 @@
     <meta name="theme-color" content="#0e0d0b">
     <meta property="og:title" content="{{ $pageTitle }}">
     <meta property="og:description" content="{{ $pageDescription }}">
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ url(config('portfolio.photo')) }}">
+    <meta name="twitter:card" content="summary_large_image">
     <title>{{ $pageTitle }}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <script>
@@ -37,9 +38,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen overflow-x-hidden bg-night antialiased">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
     <div class="spotlight" aria-hidden="true"></div>
     <x-nav />
-    <main>
+    <main id="contenu">
         {{ $slot }}
     </main>
     <x-site-footer />

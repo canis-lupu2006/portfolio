@@ -15,6 +15,10 @@ export default defineConfig({
                 bunny('Outfit', {
                     weights: [400, 500, 600],
                 }),
+                bunny('Instrument Serif', {
+                    weights: [400],
+                    styles: ['italic'],
+                }),
             ],
         }),
         tailwindcss(),

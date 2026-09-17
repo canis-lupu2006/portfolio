@@ -3,6 +3,7 @@
     'large' => false,
     'image' => null,
     'title' => null,
+    'kicker' => null,
     'slug' => null,
 ])
 
@@ -25,6 +26,14 @@
 <div {{ $attributes->class(['cover', 'cover-'.$kind, $large ? 'cover-large' : '', $showPhoto ? 'has-image' : 'has-stage']) }}>
     @if ($showPhoto)
         <img src="{{ $src }}" alt="{{ $title ?? '' }}" class="cover-img">
+        @if ($title)
+            <div class="cover-caption">
+                @if ($kicker)
+                    <p class="stage-kicker">{{ $kicker }}</p>
+                @endif
+                <p class="stage-title">{{ $title }}</p>
+            </div>
+        @endif
     @else
         <div class="cover-stage stage-{{ $kind }}">
             @switch($kind)

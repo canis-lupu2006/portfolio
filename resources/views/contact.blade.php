@@ -1,10 +1,10 @@
-<x-layout title="Contact" description="Écrire à Modeste Konlani.">
+<x-layout title="Contact" description="Écrire à KONLANI Yentchabré Modeste.">
     <section class="site-wrap grid gap-14 pt-16 pb-24 md:grid-cols-12 md:pt-24">
         <div class="md:col-span-5" data-reveal>
             <p class="eyebrow">Contact</p>
-            <h1 class="mt-3 font-display text-5xl font-extrabold tracking-tight md:text-6xl">Écrivons-nous.</h1>
+            <h1 class="mt-3 font-display text-5xl font-extrabold tracking-tight md:text-6xl">Discutons.</h1>
             <p class="mt-6 max-w-sm leading-relaxed text-mute">
-                Un projet, une question, une opportunité. Je lis tout — réponse sous 48h en général.
+                Un projet, une question, une opportunité de stage. Je lis tout — réponse sous 48h en général.
             </p>
 
             <ul class="mt-10 space-y-5 text-sm">
@@ -19,6 +19,14 @@
                 <li>
                     <p class="eyebrow">GitHub</p>
                     <a href="{{ config('portfolio.github') }}" class="mt-1 block" target="_blank" rel="noreferrer">{{ config('portfolio.github_handle') }}</a>
+                </li>
+                <li>
+                    <p class="eyebrow">LinkedIn</p>
+                    <a href="{{ config('portfolio.linkedin') }}" class="mt-1 block" target="_blank" rel="noreferrer">{{ config('portfolio.linkedin_handle') }}</a>
+                </li>
+                <li>
+                    <p class="eyebrow">CV</p>
+                    <a href="{{ config('portfolio.cv') }}" class="mt-1 block" target="_blank" rel="noreferrer">Télécharger le PDF</a>
                 </li>
                 <li>
                     <p class="eyebrow">Lieu</p>
@@ -37,23 +45,23 @@
                 <div class="grid gap-5 sm:grid-cols-2">
                     <label>
                         <span>Nom</span>
-                        <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name">
+                        <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Votre nom">
                         @error('name') <em>{{ $message }}</em> @enderror
                     </label>
                     <label>
                         <span>E-mail</span>
-                        <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="vous@exemple.com">
                         @error('email') <em>{{ $message }}</em> @enderror
                     </label>
                 </div>
                 <label>
-                    <span>Sujet</span>
-                    <input type="text" name="subject" value="{{ old('subject') }}">
+                    <span>Sujet — optionnel</span>
+                    <input type="text" name="subject" value="{{ old('subject') }}" placeholder="Stage, collab, projet…">
                     @error('subject') <em>{{ $message }}</em> @enderror
                 </label>
                 <label>
                     <span>Message</span>
-                    <textarea name="body" rows="7" required>{{ old('body') }}</textarea>
+                    <textarea name="body" rows="7" required placeholder="Le contexte, le besoin, le délai — ce que vous voulez.">{{ old('body') }}</textarea>
                     @error('body') <em>{{ $message }}</em> @enderror
                 </label>
                 <button type="submit" class="btn-primary justify-self-start" data-magnetic>Envoyer</button>

@@ -1,7 +1,7 @@
 <x-layout :title="$project['title']" :description="$project['summary']">
     <article class="site-wrap pt-16 pb-24 md:pt-24">
         <p class="eyebrow" data-reveal>
-            <a href="{{ route('work.index') }}">Travail</a>
+            <a href="{{ route('work.index') }}">Projets</a>
             <span class="mx-2 text-mute">/</span>
             {{ $project['kicker'] }} · {{ $project['year'] }}
         </p>
@@ -20,12 +20,16 @@
         @endif
 
         <div class="mt-10" data-reveal>
-            <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :image="$project['image'] ?? null" large />
+            <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" large />
         </div>
 
         <div class="mt-14 grid gap-12 md:grid-cols-12">
             <div class="md:col-span-4" data-reveal>
                 <div class="sticky top-24 space-y-8 panel">
+                    <div>
+                        <p class="eyebrow">Rôle</p>
+                        <p class="mt-3">{{ $project['role'] }}</p>
+                    </div>
                     <div>
                         <p class="eyebrow">Stack</p>
                         <div class="mt-4 flex flex-wrap gap-2">
@@ -62,6 +66,25 @@
                 @endforeach
             </div>
         </div>
+
+        <nav class="project-pager" aria-label="Parcourir les projets" data-reveal>
+            @if ($previous)
+                <a href="{{ route('work.show', $previous['slug']) }}" class="is-prev">
+                    <span class="eyebrow">Précédent</span>
+                    <strong>{{ $previous['title'] }}</strong>
+                    <span>{{ $previous['kicker'] }}</span>
+                </a>
+            @else
+                <span></span>
+            @endif
+            @if ($next)
+                <a href="{{ route('work.show', $next['slug']) }}" class="is-next">
+                    <span class="eyebrow">Suivant</span>
+                    <strong>{{ $next['title'] }}</strong>
+                    <span>{{ $next['kicker'] }}</span>
+                </a>
+            @endif
+        </nav>
     </article>
 
     @if ($others->isNotEmpty())

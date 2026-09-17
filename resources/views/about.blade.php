@@ -1,20 +1,24 @@
-<x-layout title="À propos" description="Modeste Konlani, développeur fullstack à Lomé — ESGIS-Togo.">
+<x-layout title="À propos" description="KONLANI Yentchabré Modeste, développeur fullstack à Lomé — ESGIS-Togo.">
     <section class="site-wrap pt-16 pb-12 md:pt-24" data-reveal>
         <p class="eyebrow">Profil</p>
         <h1 class="mt-3 font-display text-5xl font-extrabold tracking-tight md:text-6xl">À propos</h1>
+        <p class="mt-5 max-w-lg text-lg text-mute">Qui je suis, ce que je construis, comment j’ai appris — à Lomé.</p>
     </section>
 
     <section class="site-wrap grid gap-12 pb-16 md:grid-cols-12">
         <div class="md:col-span-5" data-reveal>
             <div class="id-card">
-                <span>MK</span>
-                <div>
-                    <p class="font-display text-3xl font-bold">{{ config('portfolio.name') }}</p>
-                    <p class="mt-2 text-mute">{{ config('portfolio.role') }}</p>
-                    <p class="mt-6 text-sm text-mute">Licence IRT · ESGIS-Togo</p>
-                    <p class="text-sm text-mute">{{ config('portfolio.location') }}</p>
+                <div class="id-photo">
+                    <img src="{{ config('portfolio.photo') }}" alt="Portrait de {{ config('portfolio.name') }}">
                 </div>
-                <p class="id-now"><i></i> Ouvert au stage et aux collabs</p>
+                <div class="id-card-body">
+                    <p class="font-display text-3xl font-bold tracking-tight">{{ config('portfolio.last_name') }}</p>
+                    <p class="mt-1 font-serif text-xl italic">{{ config('portfolio.given_names') }}</p>
+                    <p class="mt-2 text-mute">{{ config('portfolio.role') }}</p>
+                    <p class="mt-5 text-sm text-mute">Licence IRT · ESGIS-Togo</p>
+                    <p class="text-sm text-mute">{{ config('portfolio.location') }}</p>
+                    <p class="id-now mt-5"><i></i> Ouvert au stage et aux collabs</p>
+                </div>
             </div>
         </div>
         <div class="md:col-span-7 max-w-xl space-y-5 text-lg leading-relaxed text-mute" data-reveal>
@@ -24,6 +28,7 @@
             <div class="flex flex-wrap gap-3 pt-4">
                 <a href="{{ config('portfolio.cv') }}" class="btn-primary" data-magnetic target="_blank" rel="noreferrer">Télécharger le CV</a>
                 <a href="{{ config('portfolio.github') }}" class="btn-ghost" data-magnetic target="_blank" rel="noreferrer">GitHub</a>
+                <a href="{{ config('portfolio.linkedin') }}" class="btn-ghost" data-magnetic target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
         </div>
     </section>
@@ -40,6 +45,7 @@
     </section>
 
     <section class="site-wrap pb-16">
+        <p class="eyebrow mb-5">Ce que je touche</p>
         <div class="grid gap-5 md:grid-cols-3">
             @foreach (config('portfolio.stack_groups') as $group)
                 <div class="panel" data-reveal>
@@ -58,6 +64,7 @@
         <div class="md:col-span-5" data-reveal>
             <p class="eyebrow">Formation</p>
             <h2 class="mt-3 font-display text-4xl font-bold tracking-tight">Parcours</h2>
+            <p class="mt-4 max-w-sm text-mute">Licence en cours, bac scientifique avant ça — le fil reste le même : comprendre un système, puis le faire marcher.</p>
         </div>
         <div class="md:col-span-7" data-reveal>
             <ul class="overflow-hidden rounded-3xl border border-line">

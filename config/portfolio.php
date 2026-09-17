@@ -1,9 +1,11 @@
 <?php
 
 return [
-    'name' => 'Modeste Konlani',
+    'name' => 'KONLANI Yentchabré Modeste',
     'first_name' => 'Modeste',
-    'last_name' => 'Konlani',
+    'middle_name' => 'Yentchabré',
+    'given_names' => 'Yentchabré Modeste',
+    'last_name' => 'KONLANI',
     'role' => 'Développeur fullstack',
     'location' => 'Agoè-Zossimé, Lomé',
     'country' => 'Togo',
@@ -12,6 +14,9 @@ return [
     'phone_href' => '+22891773882',
     'github' => 'https://github.com/canis-lupu2006',
     'github_handle' => 'canis-lupu2006',
+    'linkedin' => 'https://www.linkedin.com/in/modeste-konlani-4214b4335/',
+    'linkedin_handle' => 'modeste-konlani',
+    'photo' => '/images/momo.jpg',
     'cv' => '/cv/CV-Modeste-Konlani.pdf',
     'tagline' => 'Des applications utilisées, pas seulement présentées.',
     'intro' => "Je conçois des outils pour des usages réels — gestion d'entreprise, cartographie d'urgence, analytics — du modèle de données jusqu'à ce que ça tourne.",
@@ -19,10 +24,10 @@ return [
         ['value' => '8', 'suffix' => '', 'label' => 'projets livrés'],
         ['value' => '3', 'suffix' => '', 'label' => 'hackathons'],
         ['value' => '2', 'suffix' => '', 'label' => 'apps en prod'],
-        ['value' => '48h', 'suffix' => '', 'label' => 'pour répondre', 'static' => true],
+        ['value' => 'ESGIS', 'suffix' => '', 'label' => 'licence IRT · Lomé', 'static' => true],
     ],
     'bio' => [
-        "Je m'appelle Modeste Konlani. J'habite à Agoè-Zossimé, à Lomé, et je prépare une licence professionnelle Informatique, Réseaux et Télécoms à l'ESGIS-Togo.",
+        "Je m'appelle KONLANI Yentchabré Modeste. J'habite à Agoè-Zossimé, à Lomé, et je prépare une licence professionnelle Informatique, Réseaux et Télécoms à l'ESGIS-Togo.",
         "Je développe surtout des applications que quelqu'un ouvre le lendemain : factures et stock pour une entreprise de froid, carte collaborative des inondations de Lomé, dashboards, pipelines CI/CD.",
         "Côté technique, je suis à l'aise sur Java / Spring Boot et MySQL, et je construis aussi en React, Flutter et Laravel. Ce qui m'intéresse, c'est le produit de bout en bout.",
     ],
@@ -76,6 +81,7 @@ return [
             'year' => '2026',
             'featured' => true,
             'cover' => 'todzi',
+            'role' => 'Conception + développement',
             'summary' => 'Carte temps réel des inondations de Lomé : signalement, SOS, itinéraire sécurisé, heatmap de risque.',
             'description' => "TODZI — « l'eau de pluie » en éwé — est une application mobile et web conçue pour le hackathon YAS Togo. Elle permet aux habitants de Lomé de signaler les zones inondées, d'alerter les secours, et de calculer un itinéraire qui évite l'eau.",
             'body' => [
@@ -98,6 +104,7 @@ return [
             'year' => '2026',
             'featured' => true,
             'cover' => 'froid',
+            'role' => 'Full-stack, de bout en bout',
             'summary' => 'Application de gestion pour une entreprise de froid : factures, stock, tâches, rapports. Flutter et Spring Boot.',
             'description' => "Un outil interne pour Froid du Centre : facturation PDF, stock, tâches pour les apprentis, rapports mensuels et comptes multi-rôles. Client Flutter (Android, web, Windows), backend Spring Boot + MySQL.",
             'body' => [
@@ -120,6 +127,7 @@ return [
             'year' => '2026',
             'featured' => true,
             'cover' => 'nba',
+            'role' => 'Dashboard + modèle Elo',
             'summary' => 'Dashboard NBA : classements, stats joueurs, modèle Elo et métriques avancées. React + Vite.',
             'description' => "Dashboard interactif soumis au hackathon AQX Sports Analytics Data Bowl 3.0. Classements Est/Ouest calculés sur la saison réelle, stats des joueurs, et un modèle Elo backtesté sur 1 236 matchs.",
             'body' => [
@@ -145,6 +153,7 @@ return [
             'year' => '2026',
             'featured' => false,
             'cover' => 'stock',
+            'role' => 'Backend + modèle de données',
             'summary' => 'Système de stock pour le froid et la climatisation, avec génération de factures PDF.',
             'description' => "Application complète de gestion de stock : modélisation MySQL, couche repository, et export de factures professionnelles en PDF. Pensée pour les produits liés au froid et à la climatisation.",
             'body' => [
@@ -164,12 +173,13 @@ return [
         [
             'slug' => 'jenkins-cicd',
             'title' => 'Pipeline CI/CD',
-            'kicker' => 'Jenkins · Maven',
+            'kicker' => 'Tablée Togolaise',
             'year' => '2026',
             'featured' => false,
             'cover' => 'jenkins',
-            'summary' => 'Intégration et déploiement d\'un site de restauration : surveillance GitHub et builds Maven automatiques.',
-            'description' => "Configuration d'un pipeline Jenkins sous Windows pour un site de restauration : dès qu'un commit arrive sur GitHub, le build Maven se lance tout seul.",
+            'role' => 'Pipeline Jenkins',
+            'summary' => 'Jenkins surveille GitHub et lance le build Maven du site Tablée Togolaise — sans clic manuel.',
+            'description' => "Pipeline Jenkins sous Windows pour le site de restauration Tablée Togolaise : dès qu'un commit arrive sur GitHub, le build Maven se lance tout seul.",
             'body' => [
                 "Le but n'était pas juste de « faire du Jenkins ». C'était d'avoir une chaîne réelle — dépôt, build, déploiement — qui tient sans cliquer à la main.",
             ],
@@ -191,6 +201,7 @@ return [
             'year' => '2025',
             'featured' => false,
             'cover' => 'video',
+            'role' => 'Modélisation + SQL',
             'summary' => 'Gestion complète d\'un club vidéo : modèle MERISE/UML et règles métier via triggers MySQL.',
             'description' => "Système de gestion pour un club de location vidéo. La base est modélisée en MERISE/UML ; les règles de gestion passent par des triggers MySQL.",
             'body' => [
@@ -208,12 +219,13 @@ return [
         [
             'slug' => 'edusphere',
             'title' => 'Edusphere',
-            'kicker' => 'Hackathon',
+            'kicker' => 'Hackathon éducation',
             'year' => '2026',
             'featured' => false,
             'cover' => 'edu',
-            'summary' => 'Projet de hackathon autour de l\'éducation.',
-            'description' => "Edusphere est un projet développé en hackathon, côté éducation. Une base pour explorer comment le numérique peut servir les étudiants et les écoles.",
+            'role' => 'Prototype hackathon',
+            'summary' => 'Prototype autour de l\'éducation, cadré et livré dans le rythme d\'un hackathon.',
+            'description' => "Edusphere est un prototype développé en hackathon, côté éducation. Une base pour explorer comment le numérique peut servir les étudiants et les écoles.",
             'body' => [
                 "Développé dans le rythme d'un hackathon : cadrer vite, livrer quelque chose de démontrable, et garder une architecture lisible.",
             ],
@@ -235,7 +247,8 @@ return [
             'year' => '2026',
             'featured' => false,
             'cover' => 'chat',
-            'summary' => 'Chatbot pour répondre aux questions d\'un service de l\'école.',
+            'role' => 'Service campus ESGIS',
+            'summary' => 'Assistant pour un service de l\'ESGIS : les questions fréquentes, sans file d\'attente au bureau.',
             'description' => "Un chatbot conçu pour un service particulier de l'ESGIS : répondre aux questions fréquentes sans faire attendre quelqu'un derrière un bureau.",
             'body' => [
                 "L'idée est simple : un canal unique, des réponses utiles, moins de va-et-vient pour les étudiants.",
