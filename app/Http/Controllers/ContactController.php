@@ -18,7 +18,14 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request): RedirectResponse
     {
-        $message = Message::query()->create($request->validated());
+        $data = $request->validated();
+
+        try {
+            $message = Message::query()->create($data);
+        } catch (\Throwable $exception) {
+            report($exception);
+            $message = new Message($data);
+        }
 
         Mail::to(config('portfolio.email'))->send(new ContactReceived($message));
 

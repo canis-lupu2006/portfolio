@@ -9,7 +9,7 @@ return [
     'role' => 'Développeur fullstack',
     'location' => 'Agoè-Zossimé, Lomé',
     'country' => 'Togo',
-    'email' => 'konlanimodeste9177@gmail.com',
+    'email' => 'canislupus9385@gmail.com',
     'phone' => '+228 91 77 38 82',
     'phone_href' => '+22891773882',
     'github' => 'https://github.com/canis-lupu2006',
