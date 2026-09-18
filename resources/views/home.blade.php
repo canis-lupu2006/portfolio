@@ -1,6 +1,6 @@
 <x-layout>
     <section class="site-wrap grid items-center gap-10 pt-10 pb-10 md:grid-cols-12 md:pt-14 md:pb-12">
-        <div class="md:col-span-6">
+        <div class="md:col-span-6" data-reveal>
             <div class="hero-identity">
                 <img
                     class="hero-photo"
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="md:col-span-6">
+        <div class="md:col-span-6" data-reveal>
             <div class="hero-stack">
                 @foreach ($featured as $card)
                     <a href="{{ route('work.show', $card['slug']) }}" class="hero-stack-card">
