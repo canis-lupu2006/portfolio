@@ -27,7 +27,9 @@ class ContactController extends Controller
             $message = new Message($data);
         }
 
-        Mail::to(config('portfolio.email'))->send(new ContactReceived($message));
+        if (filled(config('mail.mailers.smtp.password'))) {
+            Mail::to(config('portfolio.email'))->send(new ContactReceived($message));
+        }
 
         return back()->with('status', 'Message bien reçu. Je te réponds dès que possible.');
     }
