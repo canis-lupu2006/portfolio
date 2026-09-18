@@ -9,6 +9,7 @@
         </div>
         <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <a href="mailto:{{ config('portfolio.email') }}" class="nav-link">E-mail</a>
+            <a href="{{ config('portfolio.whatsapp') }}?text={{ rawurlencode(config('portfolio.whatsapp_text')) }}" class="nav-link" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="{{ config('portfolio.github') }}" class="nav-link" target="_blank" rel="noreferrer">GitHub</a>
             <a href="{{ config('portfolio.linkedin') }}" class="nav-link" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="{{ config('portfolio.cv') }}" class="nav-link" target="_blank" rel="noreferrer">CV</a>

@@ -4,8 +4,12 @@
             <p class="eyebrow">Contact</p>
             <h1 class="mt-3 font-display text-5xl font-extrabold tracking-tight md:text-6xl">Discutons.</h1>
             <p class="mt-6 max-w-sm leading-relaxed text-mute">
-                Un projet, une question, une opportunité de stage. Je lis tout — réponse sous 48h en général.
+                Un projet, une question, une opportunité de stage. WhatsApp est le plus direct — sinon le formulaire, réponse sous 48h en général.
             </p>
+
+            <div class="mt-8">
+                <x-whatsapp label="Contacter par WhatsApp" />
+            </div>
 
             <ul class="mt-10 space-y-5 text-sm">
                 <li>
@@ -13,8 +17,8 @@
                     <a href="mailto:{{ config('portfolio.email') }}" class="mt-1 block">{{ config('portfolio.email') }}</a>
                 </li>
                 <li>
-                    <p class="eyebrow">Téléphone</p>
-                    <a href="tel:{{ config('portfolio.phone_href') }}" class="mt-1 block">{{ config('portfolio.phone') }}</a>
+                    <p class="eyebrow">WhatsApp</p>
+                    <a href="{{ config('portfolio.whatsapp') }}?text={{ rawurlencode(config('portfolio.whatsapp_text')) }}" class="mt-1 block" target="_blank" rel="noreferrer">{{ config('portfolio.phone') }}</a>
                 </li>
                 <li>
                     <p class="eyebrow">GitHub</p>

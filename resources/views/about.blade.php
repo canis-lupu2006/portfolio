@@ -29,6 +29,7 @@
                 <a href="{{ config('portfolio.cv') }}" class="btn-primary" data-magnetic target="_blank" rel="noreferrer">Télécharger le CV</a>
                 <a href="{{ config('portfolio.github') }}" class="btn-ghost" data-magnetic target="_blank" rel="noreferrer">GitHub</a>
                 <a href="{{ config('portfolio.linkedin') }}" class="btn-ghost" data-magnetic target="_blank" rel="noreferrer">LinkedIn</a>
+                <x-whatsapp class="btn-whatsapp--ghost" />
             </div>
         </div>
     </section>

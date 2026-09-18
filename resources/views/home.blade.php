@@ -146,7 +146,7 @@
             <p class="relative mx-auto mt-4 max-w-md text-mute">Agoè-Zossimé, Lomé — ouvert aux collabs et aux opportunités. Réponse sous 48h en général.</p>
             <div class="relative mt-8 flex flex-wrap justify-center gap-3">
                 <a href="{{ route('contact') }}" class="btn-primary" data-magnetic>Écrire un message</a>
-                <a href="mailto:{{ config('portfolio.email') }}" class="btn-ghost" data-magnetic>{{ config('portfolio.email') }}</a>
+                <x-whatsapp />
             </div>
         </div>
     </section>

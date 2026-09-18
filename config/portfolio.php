@@ -12,6 +12,8 @@ return [
     'email' => 'canislupus9385@gmail.com',
     'phone' => '+228 91 77 38 82',
     'phone_href' => '+22891773882',
+    'whatsapp' => 'https://wa.me/22891773882',
+    'whatsapp_text' => 'Bonjour KONLANI, je viens de ton portfolio.',
     'github' => 'https://github.com/canis-lupu2006',
     'github_handle' => 'canis-lupu2006',
     'linkedin' => 'https://www.linkedin.com/in/modeste-konlani-4214b4335/',

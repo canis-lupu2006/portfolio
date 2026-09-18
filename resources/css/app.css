@@ -232,7 +232,8 @@ footer {
 }
 
 .btn-primary,
-.btn-ghost {
+.btn-ghost,
+.btn-whatsapp {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -265,6 +266,37 @@ footer {
     border-color: var(--color-copper);
     color: var(--color-copper);
     transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: #128c7e;
+    color: #f4fffb;
+    border: 1px solid transparent;
+}
+
+.btn-whatsapp:hover {
+    background: #0e7a6e;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(18, 140, 126, 0.22);
+}
+
+.btn-whatsapp svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+}
+
+.btn-whatsapp--ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--color-line);
+}
+
+.btn-whatsapp--ghost:hover {
+    background: transparent;
+    border-color: #128c7e;
+    color: #128c7e;
+    box-shadow: none;
 }
 
 .nav-toggle {
@@ -1414,6 +1446,7 @@ footer {
     .project-card,
     .btn-primary,
     .btn-ghost,
+    .btn-whatsapp,
     .status-pill i,
     .cta-band::before,
     .radar i,
