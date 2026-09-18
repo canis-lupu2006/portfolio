@@ -21,7 +21,7 @@
             <p class="hero-meta">{{ config('portfolio.role') }} · {{ config('portfolio.location') }}</p>
             <div class="mt-5 flex flex-wrap gap-3">
                 <a href="{{ route('work.index') }}" class="btn-primary" data-magnetic>Voir les projets</a>
-                <a href="{{ route('contact') }}" class="btn-ghost" data-magnetic>Me écrire</a>
+                <a href="{{ route('contact') }}" class="btn-ghost" data-magnetic>M’écrire</a>
             </div>
         </div>
 
