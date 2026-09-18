@@ -5,12 +5,13 @@
     'title' => null,
     'kicker' => null,
     'slug' => null,
+    'eager' => false,
 ])
 
 @php
     $src = $image;
     if (! $src && $slug) {
-        foreach (['png', 'jpg', 'jpeg', 'webp'] as $ext) {
+        foreach (['webp', 'jpg', 'jpeg', 'png'] as $ext) {
             $relative = "images/projects/{$slug}.{$ext}";
             if (is_file(public_path($relative))) {
                 $src = '/'.$relative;
@@ -25,7 +26,14 @@
 
 <div {{ $attributes->class(['cover', 'cover-'.$kind, $large ? 'cover-large' : '', $showPhoto ? 'has-image' : 'has-stage']) }}>
     @if ($showPhoto)
-        <img src="{{ $src }}" alt="{{ $title ?? '' }}" class="cover-img">
+        <img
+            src="{{ $src }}"
+            alt="{{ $title ?? '' }}"
+            class="cover-img"
+            loading="{{ $eager ? 'eager' : 'lazy' }}"
+            decoding="async"
+            @if ($eager) fetchpriority="high" @endif
+        >
         @if ($title)
             <div class="cover-caption">
                 @if ($kicker)

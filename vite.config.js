@@ -10,10 +10,10 @@ export default defineConfig({
             refresh: true,
             fonts: [
                 bunny('Syne', {
-                    weights: [500, 600, 700, 800],
+                    weights: [700, 800],
                 }),
                 bunny('Outfit', {
-                    weights: [400, 500, 600],
+                    weights: [400, 600],
                 }),
                 bunny('Instrument Serif', {
                     weights: [400],

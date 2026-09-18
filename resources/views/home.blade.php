@@ -1,6 +1,6 @@
 <x-layout>
     <section class="site-wrap grid items-center gap-10 pt-10 pb-10 md:grid-cols-12 md:pt-14 md:pb-12">
-        <div class="md:col-span-6" data-reveal>
+        <div class="md:col-span-6">
             <div class="hero-identity">
                 <img
                     class="hero-photo"
@@ -8,6 +8,8 @@
                     alt="Portrait de {{ config('portfolio.name') }}"
                     width="88"
                     height="88"
+                    fetchpriority="high"
+                    decoding="async"
                 >
                 <p class="status-pill"><i></i> Disponible · Lomé</p>
             </div>
@@ -23,11 +25,11 @@
             </div>
         </div>
 
-        <div class="md:col-span-6" data-reveal>
+        <div class="md:col-span-6">
             <div class="hero-stack">
                 @foreach ($featured as $card)
                     <a href="{{ route('work.show', $card['slug']) }}" class="hero-stack-card">
-                        <x-cover :kind="$card['cover']" :slug="$card['slug']" :title="$card['title']" :kicker="$card['kicker']" :image="$card['image'] ?? null" />
+                        <x-cover :kind="$card['cover']" :slug="$card['slug']" :title="$card['title']" :kicker="$card['kicker']" :image="$card['image'] ?? null" eager />
                     </a>
                 @endforeach
             </div>
@@ -68,7 +70,7 @@
             <article class="feature-row {{ $index % 2 === 1 ? 'is-flip' : '' }}" data-reveal>
                 <a href="{{ route('work.show', $project['slug']) }}" class="feature-visual">
                     <span class="feature-index">{{ str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT) }}</span>
-                    <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" />
+                    <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" :eager="$index === 0" />
                 </a>
                 <div>
                     <p class="eyebrow">{{ $project['kicker'] }} · {{ $project['year'] }}</p>

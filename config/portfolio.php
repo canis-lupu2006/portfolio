@@ -18,7 +18,7 @@ return [
     'github_handle' => 'canis-lupu2006',
     'linkedin' => 'https://www.linkedin.com/in/modeste-konlani-4214b4335/',
     'linkedin_handle' => 'modeste-konlani',
-    'photo' => '/images/momo.jpg',
+    'photo' => '/images/momo.webp',
     'cv' => '/cv/CV-Modeste-Konlani.pdf',
     'tagline' => 'Des applications utilisées, pas seulement présentées.',
     'intro' => "Je conçois des outils pour des usages réels — gestion d'entreprise, cartographie d'urgence, analytics — du modèle de données jusqu'à ce que ça tourne.",

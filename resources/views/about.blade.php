@@ -9,7 +9,7 @@
         <div class="md:col-span-5" data-reveal>
             <div class="id-card">
                 <div class="id-photo">
-                    <img src="{{ config('portfolio.photo') }}" alt="Portrait de {{ config('portfolio.name') }}">
+                    <img src="{{ config('portfolio.photo') }}" alt="Portrait de {{ config('portfolio.name') }}" width="720" height="900" fetchpriority="high" decoding="async">
                 </div>
                 <div class="id-card-body">
                     <p class="font-display text-3xl font-bold tracking-tight">{{ config('portfolio.last_name') }}</p>

@@ -14,3 +14,7 @@ storage/pail
 .idea
 .vscode
 *.md
+scripts
+public/images/momo.jpg
+public/images/modeste.jpg
+public/images/projects/*.png

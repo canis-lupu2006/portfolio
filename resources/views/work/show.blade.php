@@ -20,7 +20,7 @@
         @endif
 
         <div class="mt-10" data-reveal>
-            <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" large />
+            <x-cover :kind="$project['cover']" :slug="$project['slug']" :title="$project['title']" :kicker="$project['kicker']" :image="$project['image'] ?? null" large eager />
         </div>
 
         <div class="mt-14 grid gap-12 md:grid-cols-12">
